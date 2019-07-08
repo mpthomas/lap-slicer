@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./jquery-1.12.0.min.js"></script>
+    <script src="./map.js"></script>
+    <script src="./slices.js"></script>
+	<!-- You need to create map_token.js with a single line: var maps_token="<API token/key>" -->
+    <script src="./map_token.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() 
+		{
+			$.getScript("map_token.js",function() {
+				alert(maps_token);
+		    	var s = document.createElement("script");
+		    	s.src = "https://maps.googleapis.com/maps/api/js?key="+maps_token+"&callback=initMap"
+		    	// Use any selector
+		    	$("head").append(s);
+			});
+		});
+	</script>
+	
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=***REMOVED***&callback=initMap"async defer></script> -->
+    <title>Lap Slicer </title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 10 10;
+        padding: 0;
+      }
+      #map {
+        width: 50%;
+		height: 400px;
+      }
+    </style>
+  </head>
+  <body onload="init()">
+    
+  <div style="float:left" id="map"></div>
+  <div style="float:left;padding-left:10px" id="tracks">
+ 	<select id="track-list">
+		<option selected="true" value="">-- Select Track --</option>
+	</select>	
+	Label: <input id="track-label" type="text" name="label">
+	<button id="slice-create">Create New</button>
+    <br>
+    <div id="slices"><ul id="slice-list" style="list-style:none"></ul></div>
+	<br>
+	<div id="video-player"></div>
+  </div>
+
+	<script>
+	function init() {
+      createTracklist();
+	  listSlices();
+
+	  $("#slice-create").click(function() {
+	      createSlice();
+      });
+
+	  initMap(37.795233, -101.626195); //kansas
+
+	}
+	</script>
+  </body>
+</html>
+

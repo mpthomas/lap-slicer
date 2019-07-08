@@ -1,0 +1,6 @@
+*.pyc
+videos/*
+youtube.html
+testdata.csv
+slayer_test.py
+map_token.js

@@ -1,7 +1,6 @@
 var map;
 var map_polygon;
 
-//key  ***REMOVED*** 
 function initMap(lat,lng) {
   map = new google.maps.Map(document.getElementById('map'), {
     center: new google.maps.LatLng(lat,lng),

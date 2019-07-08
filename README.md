@@ -1,20 +1,20 @@
-#lap-slicer
+# lap-slicer
 
 A small utility to assist in editing and analysis of in-car track video. Often a driver may want to see lap-over-lap performance through a certain turn or section of the track. Rather than trying to fast forward over and over, this tool will create a single video of a specific area of the track (selected via google maps polygons).
 
 This can also be used if you are interested in cutting out just a single slice. For example, you have a long video and log of a flight and you just want to capture when the moving object passes through a certain area.
 
-##Features
+## Features
 
 Generate a video file containing only the video segment when a car or device is within a specific geographical area (corner, straight, etc)
 
 ## Installing/Getting Started
 
-####Installation Requirments
+#### Installation Requirments
 ffmpeg http://www.ffmpeg.org
 apache or other web server
 
-####Initial Configuration
+#### Initial Configuration
 1. Create a google maps developer token/key (free). Set your domain policy for the key as appropriate (localhost most likely) https://cloud.google.com/maps-platform/
 
 2. Create a maps_token.js in the root directory
@@ -31,7 +31,7 @@ apache or other web server
 
 6. In tracks.json add geocordinates for the particular track or location you are interested in. Currently Roebling Road Raceway and Sebring International Raceway are included.
 
-#### Usage
+### Usage
 1. Start the backend
 
 	`python sliceapi.py`
